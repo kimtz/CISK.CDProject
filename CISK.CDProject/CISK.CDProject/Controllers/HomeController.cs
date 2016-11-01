@@ -15,14 +15,14 @@ namespace CISK.CDProject.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "This shop is for all you hungover people.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Kim.";
 
             return View();
         }
