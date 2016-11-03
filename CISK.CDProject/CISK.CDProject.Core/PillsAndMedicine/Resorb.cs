@@ -3,6 +3,13 @@
     public class Resorb : IItem
     {
         private double _price = 70;
+        private string _name = "Resorb";
+
+        public string GetName()
+        {
+            return _name;
+        }
+
         public int GetWareHouseStatus()
         {
             throw new System.NotImplementedException();

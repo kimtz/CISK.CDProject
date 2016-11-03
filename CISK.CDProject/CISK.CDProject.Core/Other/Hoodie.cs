@@ -3,6 +3,12 @@
     public class Hoodie : IItem
     {
         private double _price = 300;
+        private string _name = "Hoodie";
+
+        public string GetName()
+        {
+            return _name;
+        }
         public int GetWareHouseStatus()
         {
             throw new System.NotImplementedException();

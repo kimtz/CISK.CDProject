@@ -1,10 +1,9 @@
-﻿using System.ComponentModel;
-using CISK.CDProject.Core;
+﻿using CISK.CDProject.Core;
 using Raven.Client.Document;
 
 namespace CISK.CDProject.Database
 {
-    public class Database
+    public class RavenStorage
     {
 
         private DocumentStore documentStore = new DocumentStore
