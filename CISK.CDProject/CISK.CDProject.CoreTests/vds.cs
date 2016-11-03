@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CISK.CDProject.CoreTests
 {
-    public class Class1
+    class vds
     {
     }
 }

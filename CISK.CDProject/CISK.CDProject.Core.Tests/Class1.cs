@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CISK.CDProject.StorageTests
+namespace CISK.CDProject.Core.Tests
 {
     public class Class1
     {

@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Web", "CISK.CDProject\CISK.CDProject.Web.csproj", "{D530578A-AB1E-461A-8E65-5021322140FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.WebMVC", "CISK.CDProject\CISK.CDProject.WebMVC.csproj", "{D530578A-AB1E-461A-8E65-5021322140FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Core", "CISK.CDProject.Core\CISK.CDProject.Core.csproj", "{1D783127-6611-43C5-BB1F-D80D0411F9CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Tests", "CISK.CDProject.Tests\CISK.CDProject.Tests.csproj", "{B7B578CD-E17E-4A77-A8A5-6A836B80124A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Storage", "CISK.CDProject.Storage\CISK.CDProject.Storage.csproj", "{8BEF373E-4CE1-4FA5-A7D4-F404901E2123}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.API", "CISK.CDProject.API\CISK.CDProject.API.csproj", "{BFA314F0-6C6F-45EA-8486-16FB4C959883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Web", "CISK.CDProject.Web\CISK.CDProject.Web.csproj", "{9EC9A28E-B241-422C-8D7D-33868A26B6B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Core.Tests", "CISK.CDProject.Core.Tests\CISK.CDProject.Core.Tests.csproj", "{119056CA-0A00-4AF7-B004-59B209381280}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Storage.Tests", "CISK.CDProject.Storage.Tests\CISK.CDProject.Storage.Tests.csproj", "{B508CA8C-3C50-4A68-A21D-7645C0A80F1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +31,26 @@ Global
 		{1D783127-6611-43C5-BB1F-D80D0411F9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D783127-6611-43C5-BB1F-D80D0411F9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D783127-6611-43C5-BB1F-D80D0411F9CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7B578CD-E17E-4A77-A8A5-6A836B80124A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7B578CD-E17E-4A77-A8A5-6A836B80124A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7B578CD-E17E-4A77-A8A5-6A836B80124A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7B578CD-E17E-4A77-A8A5-6A836B80124A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8BEF373E-4CE1-4FA5-A7D4-F404901E2123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8BEF373E-4CE1-4FA5-A7D4-F404901E2123}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BEF373E-4CE1-4FA5-A7D4-F404901E2123}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BEF373E-4CE1-4FA5-A7D4-F404901E2123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFA314F0-6C6F-45EA-8486-16FB4C959883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA314F0-6C6F-45EA-8486-16FB4C959883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA314F0-6C6F-45EA-8486-16FB4C959883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA314F0-6C6F-45EA-8486-16FB4C959883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EC9A28E-B241-422C-8D7D-33868A26B6B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EC9A28E-B241-422C-8D7D-33868A26B6B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EC9A28E-B241-422C-8D7D-33868A26B6B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EC9A28E-B241-422C-8D7D-33868A26B6B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119056CA-0A00-4AF7-B004-59B209381280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119056CA-0A00-4AF7-B004-59B209381280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119056CA-0A00-4AF7-B004-59B209381280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119056CA-0A00-4AF7-B004-59B209381280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B508CA8C-3C50-4A68-A21D-7645C0A80F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B508CA8C-3C50-4A68-A21D-7645C0A80F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B508CA8C-3C50-4A68-A21D-7645C0A80F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B508CA8C-3C50-4A68-A21D-7645C0A80F1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
