@@ -1,9 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using CISK.CDProject.Storage;
 
 namespace CISK.CDProject.Core
 {
     public class OrderManager
     {
+        private IStorage _storage;
         public bool PlaceOrder(Dictionary<IItem, int> items)
         {
             var orderResult = new List<bool>();
@@ -19,6 +23,19 @@ namespace CISK.CDProject.Core
                 orderResult.Add(false);
             }
             return orderResult.TrueForAll(x => x == true);
+        }
+
+        public void PlaceOrder(IEnumerable<IItem> items)
+        {
+            var sortedItemsList = items.GroupBy(item => item.GetName());
+            foreach (var itemGroup in sortedItemsList)
+            {
+                var count = itemGroup.Count();
+                if (IsInWareHouse(itemGroup.First(), count))
+                {
+                    _storage.ChangeItemWareHouseStatus(itemGroup.Key, count);
+                }
+            }
         }
 
         private bool IsInWareHouse(IItem item, int count)

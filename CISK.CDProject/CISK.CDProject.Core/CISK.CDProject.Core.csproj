@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs" />
     <Compile Include="IItem.cs" />
     <Compile Include="Food\Pizza.cs" />
     <Compile Include="OrderManager.cs" />
