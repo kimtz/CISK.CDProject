@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+    <ul class="navbar">
+        <li><a href="index.html">Home page</a></li>
+        <li><a href="pillsAndMedicine.html">Pills and medicine</a></li>
+        <li><a href="food.html">Food</a></li>
+        <li><a href="other.html">Other</a></li>
+        <li><a href="cart.html">Cart</a></li>
+    </ul>
+<!--<form id="shopping-cart" action="cart.html" method="post">
+<table class="shopping-cart">
+    <thead>
+    <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<p id="sub-total">
+    <strong>Sub Total</strong>: <span id="stotal"></span>
+</p>-->
+
+<!--<ul id="shopping-cart-actions">
+    <li>
+        <input type="submit" name="delete" id="empty-cart" onclick="emptyButtonOnClickFunction()" class="btn btn-default" value="Empty Cart"/>
+    </li>
+    <li>
+        <a href="index.html" class="btn btn-default">Continue Shopping</a>
+    </li>
+    <li>
+        <a class="btn btn-default" onclick="submitButtonOnClickFunction()">Submit</a>
+    </li>
+</ul>-->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Display</h2>
+
+            <p>
+                <button onclick="displayCart()" class="button-submit" style="vertical-align: middle"><span>Display Order</span></button>
+            </p>
+            <p><span id="demo"></span></p>
+        </div>
+    </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Submit</h2>
+                <p>Submit</p>
+                <p>
+                    <button onclick="submitButtonOnClickFunction()" class="button-submit" style="vertical-align: middle"><span>Submit Order</span></button>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>Empty Cart</h2>
+                <p>Empty Cart</p>
+                <p>
+                    <button onclick="emptyButtonOnClickFunction()" class="button-empty" style="vertical-align: middle"><span>Empty Cart</span></button>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>Continue</h2>
+                <p>Continue</p>
+                <p>
+                    <button class="button-continue" href="index.html" style="vertical-align: middle"><span>Continue Shopping</span></button>
+                </p>
+            </div>
+        </div>
+        <!--</form>-->
+</body>
+</html>

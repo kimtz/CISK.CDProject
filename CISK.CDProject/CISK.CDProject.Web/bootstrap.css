@@ -32,6 +32,12 @@ ul {
     list-style: none;
 }
 
+.btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
@@ -72,3 +78,80 @@ li a:hover {
     overflow: hidden;
 }
 
+.button-submit {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #008000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button-empty {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button-continue {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #00bfff;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button-submit span,
+.button-continue span,
+.button-empty span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-continue span:after,
+.button-submit span:after,
+.button-empty span:after {
+  content: '>>';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-submit:hover span,
+.button-continue:hover span,
+.button-empty:hover span {
+  padding-right: 25px;
+}
+
+.button-continue:hover span:after,
+.button-submit:hover span:after,
+.button-empty:hover span:after {
+  opacity: 1;
+  right: 0;
+}

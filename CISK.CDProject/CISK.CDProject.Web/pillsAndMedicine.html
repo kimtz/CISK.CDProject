@@ -4,6 +4,7 @@
     <title></title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="script.js" type="text/javascript"></script>
 </head>
 <body>
     <ul class="navbar">
@@ -11,13 +12,14 @@
         <li><a href="pillsAndMedicine.html">Pills and medicine</a></li>
         <li><a href="food.html">Food</a></li>
         <li><a href="other.html">Other</a></li>
+        <li><a href="cart.html">Cart</a></li>
     </ul>
 <div class="pillsAndMedicine">
     <h1>Pills and medicine</h1>
     <h2>Here you find all the chemicals you need to get back on track!</h2>
     <ul class="imageList">
-        <li><a><img id="alvedon" src="resources/alvedon.jpg" alt="alvedon"></a></li>
-        <li><a><img id="resorb" src="resources/resorb.jpg" alt="resorb"></a></li>
+        <li><a><img id="alvedon" src="resources/alvedon.jpg" onclick="imageOnClickFunction('alvedon', '20')"></a></li>
+        <li><a><img id="resorb" src="resources/resorb.jpg" onclick="imageOnClickFunction('resorb')"></a></li>
     </ul>
 
 </div>

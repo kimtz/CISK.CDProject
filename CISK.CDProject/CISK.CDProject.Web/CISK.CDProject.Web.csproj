@@ -67,9 +67,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bootstrap.css" />
+    <Content Include="cart.html" />
+    <Content Include="checkout.html" />
     <Content Include="food.html" />
+    <Content Include="order.html" />
     <Content Include="other.html" />
     <Content Include="packages.config" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -86,6 +96,7 @@
     <Content Include="resources\pizza.png" />
     <Content Include="resources\pizza_heart.jpg" />
     <Content Include="resources\resorb.jpg" />
+    <Content Include="script.js" />
     <Content Include="test.html" />
     <Content Include="Web.config" />
   </ItemGroup>
