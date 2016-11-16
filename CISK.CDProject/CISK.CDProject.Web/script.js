@@ -3,18 +3,25 @@
 //document.getElementById("Img").onclick = function () {
 //    // img clicked
 //};
+$(function() {
+    console.log("hej");
+});
+//var storage = localStorage;
+////document.addEventListener("DOMContentLoaded", function () {
 
-var storage = sessionStorage;
-storage.cartName = "null";
-storage.total = "0";
+//    storage.cartName = "null";
+//    storage.total = "0";
+//});
+
 
 function imageOnClickFunction(id, price) {
-    createCart(storage);
+    createCart();
     addToCart(id, price);
 };
 
 
 function addToCart(id, price) {
+    var storage = localStorage;
     var cart = storage.cartName;
     var total = storage.total;
     console.log(cart);
@@ -34,8 +41,8 @@ function addToCart(id, price) {
     storage.cartName = _toJSONString(cartCopy);
 }
 
-function createCart(storage) {
-    console.log(storage);
+function createCart() {
+    var storage = localStorage;
     if (storage.cartName == "null") {
 
         var cart = {};
@@ -48,6 +55,7 @@ function createCart(storage) {
 }
 
 function displayCart() {
+    var storage = localStorage;
     if (storage.cartName != "null") {
         var cart = _toJSONObject(storage.cartName);
         var items = cart.items;
@@ -84,8 +92,8 @@ function displayCart() {
 
         var cartTotal = storage.total;
 
-        document.getElementById("demo").innerHTML = _convertNumber(cartTotal);
-
+        document.getElementById("demo").innerHTML = cartTotal;
+        // return "hej";
     }
 }
 
