@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CISK.CDProject.Core;
+using Newtonsoft.Json;
 
 namespace CISK.CDProject.API.Controllers
 {
@@ -7,14 +8,14 @@ namespace CISK.CDProject.API.Controllers
     {
         private readonly Cart _cart = new Cart();
 
-        public void Post(IItem item)
+        public void Post(string item)
         {
-            _cart.AddItem(item);   
+            _cart.AddItem(JsonConvert.DeserializeObject<IItem>(item));   
         }
 
-        public IEnumerable<IItem> Get()
+        public string Get()
         {
-            return _cart.GetAllItems();
+            return JsonConvert.SerializeObject(_cart.GetAllItems());
         }
     }
 }
