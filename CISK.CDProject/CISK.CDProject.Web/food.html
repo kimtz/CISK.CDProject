@@ -4,6 +4,8 @@
     <title></title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="script.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-3.1.1.js"></script>
 </head>
 <body>
     <ul class="navbar">
@@ -11,13 +13,14 @@
         <li><a href="pillsAndMedicine.html">Pills and medicine</a></li>
         <li><a href="food.html">Food</a></li>
         <li><a href="other.html">Other</a></li>
+        <li><a href="cart.html">Cart</a></li>
     </ul>
     <div class="food">
         <h1>Food</h1>
         <h2>Here you find all every type of food to make you feel better!</h2>
         <ul class="imageList">
-            <li><a><img id="pizza" src="resources/pizza_heart.jpg" alt="pizza_heart"></a></li>
-            <li><a><img id="cheese" src="resources/cheese.jpg" alt="cheese"></a></li>
+            <li><a><img id="pizza" src="resources/pizza_heart.jpg" onclick="imageOnClickFunction(id, '100')"></a></li>
+            <li><a><img id="cheese" src="resources/cheese.jpg" onclick="imageOnClickFunction(id, '60')"></a></li>
         </ul>
 
         <ul class="imageList">

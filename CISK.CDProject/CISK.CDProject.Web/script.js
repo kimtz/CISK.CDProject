@@ -60,18 +60,40 @@ function displayCart() {
     if (storage.cartName != "null") {
         var cart = _toJSONObject(storage.cartName);
         var items = cart.items;
-        //var $tableCart = this.$formCart.find(".shopping-cart");
-        //var $tableCartBody = $tableCart.find("tbody");
+        var tableCart = document.getElementsByClassName("shopping-cart");
+        var tableCartBody = document.getElementById("tbody");
 
+        var distinct = getDistinctValuesAndCount(items, function (uj) { return uj.name });
+        var type = typeof distinct;
+        //distinct.each
+        //{
+            
+        //};
+        //for (var i = 0; i < items.length; ++i) {
+        //    var item = items[i];
+        //    var product = item.name;
+        //    var price = item.price;
+        //    var qty = "1";
+        //    var html = "<tr><td class='pname'>" + product + "<td class='pprice'>" + price; //+ "</td></tr>" + "</td>" + "<td class='pqty'><input type='text' value='" + qty + "' class='qty'/></td>";
 
-        for (var i = 0; i < items.length; ++i) {
-            var item = items[i];
+        //    //tableCartBody.html(tableCartBody.html() + html);
+        //    document.getElementById("tbody").innerHTML += html;
+        //}
+        var c = distinct.count;
+
+        var test = _toJSONString(distinct);
+
+        var hopp = _toJSONObject(test);
+
+        for (var i = 0; i < distinct.length; ++i) {
+            var item = items[distinct[i]];
             var product = item.name;
             var price = item.price;
-            var qty = "1";
-            var html = "<tr><td class='pname'>" + product + "</td>" + "<td class='pqty'><input type='text' value='" + qty + "' class='qty'/></td>" + "<td class='pprice'>" + price + "</td></tr>";
+            var qty = distinct[i];
+            var html = "<tr><td class='pname'>" + product + "<td class='pprice'>" + price; //+ "</td></tr>" + "</td>" + "<td class='pqty'><input type='text' value='" + qty + "' class='qty'/></td>";
 
-            //$tableCartBody.html($tableCartBody.html() + html);
+            //tableCartBody.html(tableCartBody.html() + html);
+            document.getElementById("tbody").innerHTML += html;
         }
 
        // var total = storage.total;
@@ -93,9 +115,19 @@ function displayCart() {
 
         var cartTotal = storage.total;
 
-        document.getElementById("demo").innerHTML = cartTotal;
+        document.getElementById("product").innerHTML = cart.items[0].name;
+        document.getElementById("price").innerHTML = cart.items[0].price;
+        document.getElementById("total").innerHTML = cartTotal;
         // return "hej";
     }
+}
+
+var getDistinctValuesAndCount = function (ary, classifier) {
+    return ary.reduce(function (counter, item) {
+        var p = (classifier || String)(item);
+        counter[p] = counter.hasOwnProperty(p) ? counter[p] + 1 : 1;
+        return counter;
+    }, {});
 }
 
 function submitButtonOnClickFunction() {
