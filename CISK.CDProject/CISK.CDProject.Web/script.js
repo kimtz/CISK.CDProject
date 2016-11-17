@@ -56,6 +56,7 @@ function createCart() {
 }
 
 function displayCart() {
+    document.getElementById("tbody").innerHTML = "";
     var storage = localStorage;
     if (storage.cartName != "null") {
         var cart = _toJSONObject(storage.cartName);
@@ -85,11 +86,11 @@ function displayCart() {
 
         var hopp = _toJSONObject(test);
 
-        for (var i = 0; i < distinct.length; ++i) {
-            var item = items[distinct[i]];
+        for (var i = 0; i < items.length; ++i) {
+            var item = items[i];
             var product = item.name;
             var price = item.price;
-            var qty = distinct[i];
+            //var qty = [i];
             var html = "<tr><td class='pname'>" + product + "<td class='pprice'>" + price; //+ "</td></tr>" + "</td>" + "<td class='pqty'><input type='text' value='" + qty + "' class='qty'/></td>";
 
             //tableCartBody.html(tableCartBody.html() + html);
@@ -113,11 +114,11 @@ function displayCart() {
         //    $cartBody.html($cartBody.html() + cartHTML);
         //}
 
-        var cartTotal = storage.total;
+        //var cartTotal = storage.total;
 
-        document.getElementById("product").innerHTML = cart.items[0].name;
-        document.getElementById("price").innerHTML = cart.items[0].price;
-        document.getElementById("total").innerHTML = cartTotal;
+        //document.getElementById("product").innerHTML = cart.items[0].name;
+        //document.getElementById("price").innerHTML = cart.items[0].price;
+        //document.getElementById("total").innerHTML = cartTotal;
         // return "hej";
     }
 }
