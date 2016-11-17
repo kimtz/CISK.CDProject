@@ -66,6 +66,7 @@ function displayCart() {
 
         var distinct = getDistinctValuesAndCount(items, function (uj) { return uj.name });
         var type = typeof distinct;
+
         //distinct.each
         //{
             
@@ -123,10 +124,11 @@ function displayCart() {
     }
 }
 
-var getDistinctValuesAndCount = function (ary, classifier) {
+function getDistinctValuesAndCount(ary, classifier) {
     return ary.reduce(function (counter, item) {
         var p = (classifier || String)(item);
         counter[p] = counter.hasOwnProperty(p) ? counter[p] + 1 : 1;
+        console.log(p);
         return counter;
     }, {});
 }
