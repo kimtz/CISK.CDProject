@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.WebMVC", "CISK.CDProject\CISK.CDProject.WebMVC.csproj", "{D530578A-AB1E-461A-8E65-5021322140FF}"
 EndProject
@@ -9,13 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Core", "CISK
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Storage", "CISK.CDProject.Storage\CISK.CDProject.Storage.csproj", "{8BEF373E-4CE1-4FA5-A7D4-F404901E2123}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.API", "CISK.CDProject.API\CISK.CDProject.API.csproj", "{BFA314F0-6C6F-45EA-8486-16FB4C959883}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Core.Tests", "CISK.CDProject.Core.Tests\CISK.CDProject.Core.Tests.csproj", "{119056CA-0A00-4AF7-B004-59B209381280}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Storage.Tests", "CISK.CDProject.Storage.Tests\CISK.CDProject.Storage.Tests.csproj", "{B508CA8C-3C50-4A68-A21D-7645C0A80F1A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISK.CDProject.Web", "CISK.CDProject.Web\CISK.CDProject.Web.csproj", "{97BED4AD-9001-4FEE-AB82-326CEBD03221}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CISK.CDProject.API", "CISK.CDProject.API\CISK.CDProject.API.xproj", "{A0C86392-3843-4689-8B60-D3B9EBC83DF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		{8BEF373E-4CE1-4FA5-A7D4-F404901E2123}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BEF373E-4CE1-4FA5-A7D4-F404901E2123}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BEF373E-4CE1-4FA5-A7D4-F404901E2123}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BFA314F0-6C6F-45EA-8486-16FB4C959883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFA314F0-6C6F-45EA-8486-16FB4C959883}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFA314F0-6C6F-45EA-8486-16FB4C959883}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFA314F0-6C6F-45EA-8486-16FB4C959883}.Release|Any CPU.Build.0 = Release|Any CPU
 		{119056CA-0A00-4AF7-B004-59B209381280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{119056CA-0A00-4AF7-B004-59B209381280}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{119056CA-0A00-4AF7-B004-59B209381280}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{97BED4AD-9001-4FEE-AB82-326CEBD03221}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97BED4AD-9001-4FEE-AB82-326CEBD03221}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97BED4AD-9001-4FEE-AB82-326CEBD03221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0C86392-3843-4689-8B60-D3B9EBC83DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0C86392-3843-4689-8B60-D3B9EBC83DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0C86392-3843-4689-8B60-D3B9EBC83DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0C86392-3843-4689-8B60-D3B9EBC83DF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CISK.CDProject.Storage;
+//using CISK.CDProject.Storage;
 
 namespace CISK.CDProject.Core
 {
     public class OrderManager
     {
-        private IStorage _storage;
+        //private IStorage _storage;
         public bool PlaceOrder(Dictionary<IItem, int> items)
         {
             var orderResult = new List<bool>();
@@ -33,7 +33,7 @@ namespace CISK.CDProject.Core
                 var count = itemGroup.Count();
                 if (IsInWareHouse(itemGroup.First(), count))
                 {
-                    _storage.ChangeItemWareHouseStatus(itemGroup.Key, count);
+                  //  _storage.ChangeItemWareHouseStatus(itemGroup.Key, count);
                 }
             }
         }

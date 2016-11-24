@@ -1,21 +1,29 @@
-﻿using System.Collections.Generic;
-using CISK.CDProject.Core;
-using Newtonsoft.Json;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CISK.CDProject.API.Controllers
 {
-    public class CartController
+    [Route("api/cart")]
+    public class CartController : Controller
     {
-        private readonly Cart _cart = new Cart();
-
-        public void Post(string item)
+        [HttpGet()]
+        public IActionResult GetAll()
         {
-            _cart.AddItem(JsonConvert.DeserializeObject<IItem>(item));   
+            return Ok(DummyData.Current.testList);
         }
 
-        public string Get()
+        [HttpGet("{Id}")]
+        public IActionResult GetOne(int id)
         {
-            return JsonConvert.SerializeObject(_cart.GetAllItems());
+            var item = DummyData.Current.testList.FirstOrDefault(t => t.Id == id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            return Ok(item);
         }
     }
 }
