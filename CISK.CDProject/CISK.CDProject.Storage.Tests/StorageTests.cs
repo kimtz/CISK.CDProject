@@ -14,6 +14,12 @@ namespace CISK.CDProject.Storage.Tests
             _storage.Add(new DatabaseItem("Cheese", 10));
         }
 
+        [TearDown]
+        public void TearDown()
+        {
+            _storage = new FakeStorage();
+        }
+
         [Test]
         public void GetAllItems_Should_Return_List_Of_Items_With_Count_Two()
         {
@@ -34,6 +40,15 @@ namespace CISK.CDProject.Storage.Tests
         {
             var result = _storage.GetItemWareHouseStatus("Cheese");
             Assert.AreEqual(10, result);
+        }
+
+        [Test]
+        public void ChangeItemWareHouseStatus_Should_Change_Correct()
+        {
+            var orderCount = 3;
+            _storage.ChangeItemWareHouseStatus("Cheese", orderCount);
+            var result = _storage.GetItemWareHouseStatus("Cheese");
+            Assert.AreEqual(7, result);
         }
     }
 }
