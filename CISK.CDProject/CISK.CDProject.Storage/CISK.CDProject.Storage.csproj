@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseItem.cs" />
+    <Compile Include="IDatabaseItem.cs" />
     <Compile Include="IStorage.cs" />
     <Compile Include="JsonStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,12 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CISK.CDProject.Core\CISK.CDProject.Core.csproj">
-      <Project>{1d783127-6611-43c5-bb1f-d80d0411f9ce}</Project>
-      <Name>CISK.CDProject.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

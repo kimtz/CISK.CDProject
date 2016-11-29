@@ -1,10 +1,12 @@
-﻿using CISK.CDProject.Core;
+﻿using System.Collections.Generic;
 
 namespace CISK.CDProject.Storage
 {
     public interface IStorage
     {
-        int GetItemWareHouseStatus(IItem item);
-        void ChangeItemWareHouseStatus(IItem item, int count);
+        IEnumerable<IDatabaseItem> GetAllItems();
+        IDatabaseItem GetItemByName(string name);
+        int GetItemWareHouseStatus(string name);
+        void ChangeItemWareHouseStatus(string name, int count);
     }
 }

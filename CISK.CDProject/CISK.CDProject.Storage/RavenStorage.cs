@@ -1,5 +1,4 @@
-﻿using CISK.CDProject.Core;
-using Raven.Client.Document;
+﻿using Raven.Client.Document;
 
 namespace CISK.CDProject.Storage
 {
@@ -17,7 +16,7 @@ namespace CISK.CDProject.Storage
             documentStore.Initialize();
         }
 
-        public void SaveNewWareHouseStatus(IItem item, int count)
+        public void SaveNewWareHouseStatus(IDatabaseItem item, int count)
         {
             using (var session = documentStore.OpenSession())
             {

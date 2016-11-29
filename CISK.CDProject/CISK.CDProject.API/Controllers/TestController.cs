@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CISK.CDProject.API.Controllers
 {
-    [Route("api/cart")]
-    public class CartController : Controller
+    [Route("api/test")]
+    public class TestController : Controller
     {
         [HttpGet()]
         public IActionResult GetAll()

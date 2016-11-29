@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using CISK.CDProject.Core;
 using Raven.Imports.Newtonsoft.Json;
 
 namespace CISK.CDProject.Storage
@@ -11,27 +10,34 @@ namespace CISK.CDProject.Storage
         public JsonStorage()
         {
             if (!StorageExists)
-                Save(new List<IItem>());
+                Save(new List<IDatabaseItem>());
         }
 
-        public IItem GetItem(IItem item)
+        public IEnumerable<IDatabaseItem> GetAllItems()
         {
-            var items = JsonConvert.DeserializeObject<IEnumerable<IItem>>(File.ReadAllText(FilePath));
-            return items.First(x => Equals(x.GetName(), item.GetName()));
+            var items = JsonConvert.DeserializeObject<IEnumerable<IDatabaseItem>>(File.ReadAllText(FilePath));
+            return items;
+        } 
+
+        public IDatabaseItem GetItemByName(string name)
+        {
+            var items = JsonConvert.DeserializeObject<IEnumerable<IDatabaseItem>>(File.ReadAllText(FilePath));
+            return items.First(x => Equals(x.GetName(), name));
         }
 
-        public int GetItemWareHouseStatus(IItem item)
+        public int GetItemWareHouseStatus(string name)
         {
-            var items = JsonConvert.DeserializeObject<IEnumerable<IItem>>(File.ReadAllText(FilePath));
-            return items.First(x => Equals(x.GetName(), item.GetName())).GetWareHouseStatus();
+            var items = JsonConvert.DeserializeObject<IEnumerable<IDatabaseItem>>(File.ReadAllText(FilePath));
+            return items.First(x => Equals(x.GetName(), name)).GetWareHouseStatus();
         }
 
-        public void ChangeItemWareHouseStatus(IItem item, int count)
+        public void ChangeItemWareHouseStatus(string name, int count)
         {
-            var items = JsonConvert.DeserializeObject<IEnumerable<IItem>>(File.ReadAllText(FilePath));
-            var newWareHouseStatus = items.First(x => Equals(x.GetName(), item.GetName())).GetWareHouseStatus() - count;
-            item.ChangeWareHouseStatus(newWareHouseStatus);
-            //Save(newItem);
+            var items = JsonConvert.DeserializeObject<List<IDatabaseItem>>(File.ReadAllText(FilePath));
+            var itemToChange = items.First(x => Equals(x.GetName(), name));
+            itemToChange.ChangeWareHouseStatus(count);
+            items.Add(itemToChange);
+            Save(items);
         }
 
         //public IEnumerable<Movie> GetAll()
@@ -67,9 +73,9 @@ namespace CISK.CDProject.Storage
 
         private static string FilePath => "C:/Users/kim.tengbom/Documents/Storage/storage.txt";
 
-        private static void Save(IEnumerable<IItem> movies)
+        private static void Save(IEnumerable<IDatabaseItem> items)
         {
-            File.WriteAllText(FilePath, JsonConvert.SerializeObject(movies));
+            File.WriteAllText(FilePath, JsonConvert.SerializeObject(items));
         }
     }
 }
