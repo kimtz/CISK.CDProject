@@ -47,6 +47,16 @@ namespace CISK.CDProject.API.Controllers
             {
                 return BadRequest();
             }
+
+            if (testChild.Description == testChild.Name)
+            {
+                ModelState.AddModelError("Description", "The name and desciption can't be the same");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
             var testClass = DummyData.Current.testList.FirstOrDefault(t => t.Id == testClassId);
             if (testClass == null)
             {
@@ -66,6 +76,42 @@ namespace CISK.CDProject.API.Controllers
                 testClassId = testClassId,
                 childId = finalTestChild.Id
             }, finalTestChild);
+        }
+
+        [HttpPut("updateChild/{testClassId}/child/{childId}")]
+        public IActionResult UpdateTestChild(int testClassId, int childId, [FromBody] TestChildForUpdate testChild)
+        {
+            if (testChild == null)
+            {
+                return BadRequest();
+            }
+
+            if (testChild.Description == testChild.Name)
+            {
+                ModelState.AddModelError("Description", "The name and desciption can't be the same");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var testClass = DummyData.Current.testList.FirstOrDefault(t => t.Id == testClassId);
+            if (testClass == null)
+            {
+                return NotFound();
+            }
+
+            var testChildToUpdate = testClass.TestChilds.FirstOrDefault(c => c.Id == childId);
+            if (testChildToUpdate == null)
+            {
+                return NotFound();
+            }
+
+            testChildToUpdate.Name = testChild.Name;
+            testChildToUpdate.Description = testChild.Description;
+
+            return NoContent();
         }
     }
 }

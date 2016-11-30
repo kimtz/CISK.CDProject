@@ -1,19 +1,5 @@
 ﻿"use strict";
 
-//document.getElementById("Img").onclick = function () {
-//    // img clicked
-//};
-//$(function() {
-//    console.log("hej");
-//});
-//var storage = localStorage;
-////document.addEventListener("DOMContentLoaded", function () {
-
-//    storage.cartName = "null";
-//    storage.total = "0";
-//});
-
-
 function imageOnClickFunction(id, price) {
     createCart();
     addToCart(id, price);
@@ -24,34 +10,23 @@ function addToCart(id, price) {
     var storage = localStorage;
     var cart = storage.cartName;
     var total = storage.total;
-    console.log(cart);
     var cartObject = _toJSONObject(cart);
-    //var totalObject = _toJSONObject(total);
-    //var totalCopy = totalObject;
     var cartCopy = cartObject;
     var items = cartCopy.items;
     var item = {name : id, price : price};
     items.push(item);
     var sum = parseInt(total) + parseInt(price);
-  //  console.log(cartCopy.total);
-    console.log(sum);
     storage.total = _toJSONString(sum);
-    console.log(items);
-    console.log(storage);
     storage.cartName = _toJSONString(cartCopy);
 }
 
 function createCart() {
     var storage = localStorage;
     if (storage.cartName == "null" || storage.length == 0) {
-
         var cart = {};
         cart.items = [];
-
         storage.cartName = _toJSONString(cart);
         storage.total = "0";
-        console.log(storage.cartName);
-    //    storage.total = "0";
     }
 }
 

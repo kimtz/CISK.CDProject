@@ -1,8 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CISK.CDProject.API.Models
 {
-    public class TestChildForCreation
+    public class TestChildForUpdate
     {
         [Required(ErrorMessage = "You shoud provide a name")]
         [MaxLength(50)]
