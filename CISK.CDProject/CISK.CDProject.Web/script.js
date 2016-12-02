@@ -33,7 +33,7 @@ function createCart() {
 function displayCart() {
     document.getElementById("tbody").innerHTML = "";
     var storage = localStorage;
-    if (storage.cartName != "null") {
+    if (storage.cartName != null) {
         var cart = _toJSONObject(storage.cartName);
         var items = cart.items;
         var tableCart = document.getElementsByClassName("shopping-cart");
@@ -61,6 +61,14 @@ function displayCart() {
         var test = _toJSONString(distinct);
 
         var hopp = _toJSONObject(test);
+
+        let myAwesomeList = [{ name: 'Alvedon', count: 3 }, { name: 'Pizza' }]
+
+
+        console.log(distinct);
+        console.log(c);
+        console.log(test);
+        console.log(hopp);
 
         for (var i = 0; i < items.length; ++i) {
             var item = items[i];
