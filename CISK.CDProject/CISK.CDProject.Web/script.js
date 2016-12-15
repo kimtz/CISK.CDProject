@@ -62,7 +62,7 @@ function displayCart() {
 
         var hopp = _toJSONObject(test);
 
-        let myAwesomeList = [{ name: 'Alvedon', count: 3 }, { name: 'Pizza' }]
+//        let myAwesomeList = [{ name: 'Alvedon', count: 3 }, { name: 'Pizza' }]
 
 
         console.log(distinct);
